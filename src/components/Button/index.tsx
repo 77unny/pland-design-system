@@ -11,15 +11,13 @@ export type ButtonPropsType = {
   onClick?: () => void;
 }
 
-export default function Button(
-  {
+const Button = ({
     children,
     icon,
     size,
     kind,
     ...props
-  }: ButtonPropsType) {
-
+  }: ButtonPropsType) => {
   return (
     <Container
       className={kind === 'contained' ? 'btn-kind-default' : 'btn-kind-outlined'}
@@ -32,6 +30,7 @@ export default function Button(
   );
 }
 
+export default Button;
 
 Button.defaultProps = {
   size: 'full',
